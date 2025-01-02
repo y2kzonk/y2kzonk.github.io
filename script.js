@@ -1,4 +1,4 @@
-const encryptionKey = "simplekey123"; // Simple key for encryption (replace with a better mechanism)
+const encryptionKey = "simplekey123";
 
 // Encrypt function using Base64 (for demonstration purposes)
 function encrypt(text) {
@@ -30,43 +30,50 @@ function getCookie(name) {
     return null;
 }
 
-// Login function
-function login() {
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+// Show sign-up form
+function showSignUp() {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("signUpForm").style.display = "block";
+}
 
-    // Example validation
-    if (username === "admin" && password === "password123") {
-        const encryptedData = encrypt(`${username}:${password}`);
-        setCookie("userData", encryptedData, 7); // Set cookie for 7 days
-        alert("Login successful!");
-        window.location.reload(); // Simulate page reload to verify login state
+// Show login form
+function showLogin() {
+    document.getElementById("signUpForm").style.display = "none";
+    document.getElementById("loginForm").style.display = "block";
+}
+
+// Sign-Up function
+function signUp() {
+    const username = document.getElementById("signUpUsername").value;
+    const password = document.getElementById("signUpPassword").value;
+
+    if (getCookie(username)) {
+        document.getElementById("signUpMessage").style.display = "block";
     } else {
-        document.getElementById("message").style.display = "block";
+        const encryptedData = encrypt(password);
+        setCookie(username, encryptedData, 7); // Save user credentials in cookies
+        alert("Sign-Up successful! You can now log in.");
+        showLogin();
     }
 }
 
-// Check if the user is already logged in
-function checkLoginStatus() {
-    const cookieData = getCookie("userData");
-    if (cookieData) {
-        const userData = decrypt(cookieData);
-        const [username, password] = userData.split(":");
-        if (username === "admin" && password === "password123") {
-            alert(`Welcome back, ${username}!`);
-            document.querySelector(".login-container").innerHTML = `
-                <h2>Welcome, ${username}</h2>
-                <button onclick="logout()">Logout</button>
-            `;
-        }
+// Login function
+function login() {
+    const username = document.getElementById("loginUsername").value;
+    const password = document.getElementById("loginPassword").value;
+
+    const encryptedPassword = getCookie(username);
+    if (encryptedPassword && decrypt(encryptedPassword) === password) {
+        alert(`Welcome, ${username}!`);
+        setCookie("loggedInUser", username, 7); // Set logged-in user
+        document.body.innerHTML = `<h2>Welcome, ${username}!</h2><button onclick="logout()">Logout</button>`;
+    } else {
+        document.getElementById("loginMessage").style.display = "block";
     }
 }
 
 // Logout function
 function logout() {
-    setCookie("userData", "", -1); // Expire the cookie
+    setCookie("loggedInUser", "", -1);
     window.location.reload();
 }
-
-// Check login status on page load
-checkLoginStatus();
