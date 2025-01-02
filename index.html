@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millennium Society</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+        header {
+            background-color: #333;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #f0f0f0;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #00aaff;
+        }
+        .container {
+            padding: 20px;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Millennium Society</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showTab('store')">Store</a></li>
+                <li><a href="#" onclick="showTab('darkrp')">DarkRP</a></li>
+                <li><a href="#" onclick="showTab('staff')">Staff</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div id="store" class="tab-content active">
+            <h2>Store</h2>
+            <p>Welcome to the Millennium Society Store! Browse our latest items and exclusive deals.</p>
+        </div>
+
+        <div id="darkrp" class="tab-content">
+            <h2>DarkRP</h2>
+            <p>Learn more about our DarkRP server, rules, and community events.</p>
+        </div>
+
+        <div id="staff" class="tab-content">
+            <h2>Staff</h2>
+            <p>Meet the team behind Millennium Society. Dedicated to providing the best experience.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Millennium Society. All rights reserved.</p>
+    </footer>
+</body>
+</html>
