@@ -3,41 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cool Animated Website</title>
+    <title>Garnet Gaming</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo">Cool Website</div>
-        <div class="tabs">
-            <button class="tab-button" onclick="showContent('rules')">Rules</button>
-            <button class="tab-button" onclick="showContent('store')">Store</button>
-        </div>
-    </div>
-    
-    <div class="content" id="rules">
-        <h1>Website Rules</h1>
-        <ul>
-            <li>Be respectful to others.</li>
-            <li>No spamming or flooding.</li>
-            <li>Follow the community guidelines.</li>
-            <li>Keep content appropriate.</li>
-        </ul>
-    </div>
+    <header>
+        <div class="logo">Garnet Gaming</div>
+        <nav>
+            <ul class="navbar">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#discord">Main Discord</a></li>
+                <li><a href="#store">Store</a></li>
+                <li><a href="#darkrp">DarkRP</a></li>
+                <li><a href="#starwarsrp">StarWarsRP</a></li>
+                <li><a href="#militaryrp">MilitaryRP</a></li>
+                <li><a href="#staff">Staff</a></li>
+                <li><a href="#support">Support</a></li>
+                <li><a href="#search">Search...</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="content" id="store" style="display:none;">
-        <h1>Welcome to the Store</h1>
-        <p>Check out our awesome products:</p>
+    <section id="home">
+        <h1>Welcome to Garnet Gaming</h1>
+        <p>Your ultimate gaming experience!</p>
+    </section>
+
+    <section id="servers">
+        <h2>Our Servers</h2>
+        <div class="server">
+            <h3>DarkRP</h3>
+            <p>IP: 193.243.190.55:27015</p>
+            <p>Players: 105/128</p>
+        </div>
+        <div class="server">
+            <h3>StarWarsRP</h3>
+            <p>IP: 193.243.190.38:27015</p>
+            <p>Players: 9/128</p>
+        </div>
+        <div class="server">
+            <h3>MilitaryRP</h3>
+            <p>IP: 193.243.190.34:27015</p>
+            <p>Players: 12/128</p>
+        </div>
+    </section>
+
+    <section id="discord">
+        <h2>Discord</h2>
+        <div class="discord-link">
+            <p>DarkRP Discord: <a href="https://discord.gg/Thj9BCvFRs" target="_blank">Join</a></p>
+            <p>MilitaryRP Discord: <a href="https://discord.gg/vzCEUKPk2d" target="_blank">Join</a></p>
+            <p>StarWarsRP Discord: <a href="https://discord.gg/FGD96grWbu" target="_blank">Join</a></p>
+        </div>
+    </section>
+
+    <section id="forums">
+        <h2>Community Forums</h2>
         <ul>
-            <li>Product 1 - $20</li>
-            <li>Product 2 - $30</li>
-            <li>Product 3 - $15</li>
-            <li>Product 4 - $25</li>
+            <li><a href="#">Announcements & Important Information</a></li>
+            <li><a href="#">Rules & Guidelines</a></li>
+            <li><a href="#">Staff Roster</a></li>
+            <li><a href="#">Server Updates</a></li>
         </ul>
-    </div>
+    </section>
 
     <footer>
-        <p>© 2025 Cool Website. All rights reserved.</p>
+        <p>© 2025 Garnet Gaming. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
