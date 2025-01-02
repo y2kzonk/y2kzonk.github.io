@@ -1,15 +1,45 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Page</title>
-  </head>
-  <body>
-    <h1>Welcome to my page</h1>
-    <p>This is a paragraph of text.</p>
-    <img src="https://imgs.search.brave.com/0Fi3GWl03VZaCIMgg99AA57wPypncL9AAYuFwTug-1s/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/bXktaWRpb3RzLTMt/djAtbWlxYzc1dXl5/dTdlMS5qcGc_d2lk/dGg9NjQwJmNyb3A9/c21hcnQmYXV0bz13/ZWJwJnM9NWRmMWU2/MjljNGUwMGYxYzA0/MDI4NmY1YWRjOWJj/ODNhMWRmNjIxOQ" alt="An image">
-    <ul>
-      <li>Item 1</li>
-      <li>Item 2</li>
-    </ul>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Animated Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Cool Website</div>
+        <div class="tabs">
+            <button class="tab-button" onclick="showContent('rules')">Rules</button>
+            <button class="tab-button" onclick="showContent('store')">Store</button>
+        </div>
+    </div>
+    
+    <div class="content" id="rules">
+        <h1>Website Rules</h1>
+        <ul>
+            <li>Be respectful to others.</li>
+            <li>No spamming or flooding.</li>
+            <li>Follow the community guidelines.</li>
+            <li>Keep content appropriate.</li>
+        </ul>
+    </div>
+
+    <div class="content" id="store" style="display:none;">
+        <h1>Welcome to the Store</h1>
+        <p>Check out our awesome products:</p>
+        <ul>
+            <li>Product 1 - $20</li>
+            <li>Product 2 - $30</li>
+            <li>Product 3 - $15</li>
+            <li>Product 4 - $25</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>© 2025 Cool Website. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
