@@ -1,76 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garnet Gaming</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(90deg, #990000, #550000);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header .menu {
+      display: flex;
+      gap: 15px;
+    }
+
+    .header .menu a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .header .menu a:hover {
+      text-decoration: underline;
+    }
+
+    /* Servers Section */
+    .servers {
+      margin: 20px;
+      background-color: #222;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .servers h2 {
+      margin-top: 0;
+    }
+
+    .server-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .server-table th, .server-table td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #333;
+    }
+
+    .server-table th {
+      background-color: #444;
+    }
+
+    .server-table td {
+      background-color: #333;
+    }
+
+    .server-table .status {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .server-table .status .circle {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .status.online .circle {
+      background-color: #0f0;
+    }
+
+    .status.offline .circle {
+      background-color: #f00;
+    }
+
+    /* Forums Section */
+    .forums {
+      margin: 20px;
+      background-color: #222;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .forums h2 {
+      margin-top: 0;
+    }
+
+    .forum-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .forum-list li {
+      background-color: #333;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .forum-list a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .forum-list a:hover {
+      text-decoration: underline;
+    }
+
+    .start-topic {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #990000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .start-topic:hover {
+      background-color: #bb0000;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">Garnet Gaming</div>
-        <nav>
-            <ul class="navbar">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#discord">Main Discord</a></li>
-                <li><a href="#store">Store</a></li>
-                <li><a href="#darkrp">DarkRP</a></li>
-                <li><a href="#starwarsrp">StarWarsRP</a></li>
-                <li><a href="#militaryrp">MilitaryRP</a></li>
-                <li><a href="#staff">Staff</a></li>
-                <li><a href="#support">Support</a></li>
-                <li><a href="#search">Search...</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="header">
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">Main Discord</a>
+      <a href="#">Store</a>
+      <a href="#">DarkRP</a>
+      <a href="#">StarWarsRP</a>
+      <a href="#">MilitaryRP</a>
+      <a href="#">Staff</a>
+      <a href="#">Support</a>
+    </div>
+  </div>
 
-    <section id="home">
-        <h1>Welcome to Garnet Gaming</h1>
-        <p>Your ultimate gaming experience!</p>
-    </section>
+  <div class="servers">
+    <h2>Our Servers</h2>
+    <table class="server-table">
+      <thead>
+        <tr>
+          <th>Server</th>
+          <th>IP Address</th>
+          <th>Status</th>
+          <th>Players</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>DarkRP</td>
+          <td>193.243.190.55:27015</td>
+          <td class="status online"><div class="circle"></div> Online</td>
+          <td>105 / 128</td>
+        </tr>
+        <tr>
+          <td>StarWarsRP</td>
+          <td>193.243.190.38:27015</td>
+          <td class="status online"><div class="circle"></div> Online</td>
+          <td>9 / 128</td>
+        </tr>
+        <tr>
+          <td>MilitaryRP</td>
+          <td>193.243.190.34:27015</td>
+          <td class="status online"><div class="circle"></div> Online</td>
+          <td>12 / 128</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-    <section id="servers">
-        <h2>Our Servers</h2>
-        <div class="server">
-            <h3>DarkRP</h3>
-            <p>IP: 193.243.190.55:27015</p>
-            <p>Players: 105/128</p>
-        </div>
-        <div class="server">
-            <h3>StarWarsRP</h3>
-            <p>IP: 193.243.190.38:27015</p>
-            <p>Players: 9/128</p>
-        </div>
-        <div class="server">
-            <h3>MilitaryRP</h3>
-            <p>IP: 193.243.190.34:27015</p>
-            <p>Players: 12/128</p>
-        </div>
-    </section>
-
-    <section id="discord">
-        <h2>Discord</h2>
-        <div class="discord-link">
-            <p>DarkRP Discord: <a href="https://discord.gg/Thj9BCvFRs" target="_blank">Join</a></p>
-            <p>MilitaryRP Discord: <a href="https://discord.gg/vzCEUKPk2d" target="_blank">Join</a></p>
-            <p>StarWarsRP Discord: <a href="https://discord.gg/FGD96grWbu" target="_blank">Join</a></p>
-        </div>
-    </section>
-
-    <section id="forums">
-        <h2>Community Forums</h2>
-        <ul>
-            <li><a href="#">Announcements & Important Information</a></li>
-            <li><a href="#">Rules & Guidelines</a></li>
-            <li><a href="#">Staff Roster</a></li>
-            <li><a href="#">Server Updates</a></li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>© 2025 Garnet Gaming. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <div class="forums">
+    <h2>Forums</h2>
+    <ul class="forum-list">
+      <li><a href="#">Announcements & Important Information</a></li>
+      <li><a href="#">Rules & Guidelines</a></li>
+      <li><a href="#">Staff Roster</a></li>
+      <li><a href="#">Server Updates</a></li>
+    </ul>
+    <a href="#" class="start-topic">Start New Topic</a>
+  </div>
 </body>
 </html>
